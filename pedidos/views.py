@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.utils import timezone
+from django.core.mail import send_mail
 
 from .models import Menu
 
@@ -12,6 +13,16 @@ def index(request):
         message_address= request.POST['message_address']
         message_cellphone= request.POST['message_cellphone']
         message_product= request.POST['message_product']
+
+        send_mail(
+            'NUEVO PEDIDO DE: ' + message_name,
+            {'Dirección' : message_address,
+            'Celular': message_cellphone,
+            'Pedido': message_product},
+            ['armandoarenass@hotmail.com']
+            )
+
+        return render(request, 'index.html', {'message_name': message_name})
     else:
         return render(request, 'index.html', {})
 
