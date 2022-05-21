@@ -131,7 +131,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
+              <a href="book.html" class="order_online">
                 Hacer pedido
               </a>
             </div>
@@ -177,8 +177,8 @@
                       Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn1">
-                        Order Now
+                      <a href="book.html" class="btn1">
+                        Haz tu pedido
                       </a>
                     </div>
                   </div>
@@ -198,8 +198,8 @@
                       Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn1">
-                        Order Now
+                      <a href="book.html" class="btn1">
+                        Haz tu pedido
                       </a>
                     </div>
                   </div>
@@ -1127,24 +1127,25 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Haz tu pedido
+          Haz tu pedido - {{message_name}}
         </h2>
       </div>
       <div class="row">
         <div class="col-md-6">
           <div class="form_container">
-            <form action="#">
+            <form action="{% url 'book' %}" method="post">
+              {% csrf_token %}
               <div>
-                <input type="text" class="form-control" placeholder="Nombre completo" />
+                <input type="text" class="form-control" name= "message_name" placeholder="Nombre completo" />
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Dirección y barrio" />
+                <input type="text" class="form-control" name="message_address" placeholder="Dirección y barrio" />
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Teléfono celular" />
+                <input type="text" class="form-control" name="message_cellphone" placeholder="Teléfono celular" />
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Nombre del producto, cantidad y especificaciones" />
+                <input type="text" class="form-control" name="message_product" placeholder="Nombre del producto, cantidad y especificaciones" />
               </div>
               {% comment %} <div>
                 <select class="form-control nice-select wide">
@@ -1169,8 +1170,8 @@
                 <input type="date" class="form-control">
               </div>
               <div class="btn_box">
-                <button>
-                  Hacer pedido
+                <button type="submit">
+                  Ordenar
                 </button>
               </div>
             </form>
