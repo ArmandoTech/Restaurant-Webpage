@@ -143,6 +143,14 @@
     <!-- end header section -->
   </div>
 
+  <!-- Agradecimientos por el pedido -->
+  {% if message_name %}
+  <br/><br/><br/><br/>
+  <center>
+    <h2>Gracias por tu pedido {{ message_name }}</h2>
+    <p>En instantes lo entregaremos</p>
+  </center>
+  {% else %}
   <!-- book section -->
   <section class="book_section layout_padding">
     <div class="container">
@@ -154,18 +162,22 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form_container">
-            <form action="">
+            <form action="{% url 'book' %}" method="post">
+              {% csrf_token %}
               <div>
-                <input type="text" class="form-control" placeholder="Nombre completo" />
+                <input type="text" class="form-control" placeholder="Nombre completo" name="message_name" />
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Dirección y barrio" />
+                <input type="text" class="form-control" placeholder="Dirección y barrio" name="message_address"/>
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Teléfono celular" />
+                <input type="text" class="form-control" placeholder="Teléfono celular" name="message_cellphone" />
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Nombre del producto, cantidad y especificaciones" />
+                <input type="email" class="form-control" name= "message_email" placeholder="Email. Ej: Ejemplo@hotmail.com" name="message_email" />
+              </div>
+              <div class="col-12">
+                <textarea name="message_product" class="form-control mb-30" placeholder="Nombre del producto, cantidad y especificaciones" name="message_product" ></textarea>
               </div>
               {% comment %} <div>
                 <select class="form-control nice-select wide">
@@ -187,7 +199,7 @@
                 </select>
               </div> {% endcomment %}
               <div>
-                <input type="date" class="form-control">
+                <input type="date" class="form-control" name="message_date" placeholder="Fecha">
               </div>
               <div class="btn_box">
                 <button>
@@ -206,7 +218,8 @@
     </div>
   </section>
   <!-- end book section -->
-
+  {% endif %}
+  
   <!-- footer section -->
   <footer class="footer_section">
     <div class="container">

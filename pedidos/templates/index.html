@@ -1122,6 +1122,14 @@
 
   <!-- end about section -->
 
+  <!-- Agradecimientos por el pedido -->
+  {% if message_name %}
+  <br/><br/><br/><br/>
+  <center>
+    <h2>Gracias por tu pedido {{ message_name }}</h2>
+    <p>En instantes lo entregaremos</p>
+  </center>
+  {% else %}
   <!-- book section -->
   <section class="book_section layout_padding">
     <div class="container">
@@ -1145,8 +1153,11 @@
                 <input type="text" class="form-control" name="message_cellphone" placeholder="Teléfono celular" />
               </div>
               <div>
-                <input type="text" class="form-control" name="message_product" placeholder="Nombre del producto, cantidad y especificaciones" />
+                <input type="email" class="form-control" name= "message_email" placeholder="Email. Ej: Ejemplo@hotmail.com" />
               </div>
+              <div class="col-12">
+                <textarea name="message_product" class="form-control mb-30" placeholder="Nombre del producto, cantidad y especificaciones"></textarea>
+              </div>  
               {% comment %} <div>
                 <select class="form-control nice-select wide">
                   <option value="" disabled selected>
@@ -1167,7 +1178,7 @@
                 </select>
               </div> {% endcomment %}
               <div>
-                <input type="date" class="form-control">
+                <input type="date" class="form-control" name="message_date" placeholder="Fecha">
               </div>
               <div class="btn_box">
                 <button type="submit">
@@ -1186,60 +1197,7 @@
     </div>
   </section>
   <!-- end book section -->
-
-  <!-- client section -->
-
-  {% comment %} <section class="client_section layout_padding-bottom">
-    <div class="container">
-      <div class="heading_container heading_center psudo_white_primary mb_45">
-        <h2>
-          What Says Our Customers
-        </h2>
-      </div>
-      <div class="carousel-wrap row ">
-        <div class="owl-carousel client_owl-carousel">
-          <div class="item">
-            <div class="box">
-              <div class="detail-box">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                </p>
-                <h6>
-                  Moana Michell
-                </h6>
-                <p>
-                  magna aliqua
-                </p>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'pedidos/images/client1.jpg' %}" alt="" class="box-img">
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="detail-box">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                </p>
-                <h6>
-                  Mike Hamell
-                </h6>
-                <p>
-                  magna aliqua
-                </p>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'pedidos/images/client2.jpg' %}" alt="" class="box-img">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end client section --> {% endcomment %}
+  {% endif %}
 
   <!-- footer section -->
   <footer class="footer_section">
