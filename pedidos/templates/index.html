@@ -1,4 +1,6 @@
 {% load static %}
+
+
 <!DOCTYPE html>
 <html>
 
@@ -64,9 +66,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="about.html">¿Quiénes somos?</a>
               </li>
-              {% comment %} <li class="nav-item">
-                <a class="nav-link" href="book.html">Hacer pedido online</a>
-              </li> {% endcomment %}
             </ul>
             <div class="user_option">
               <a href="about.html" class="user_link">
@@ -376,13 +375,6 @@
           Nuestro Menú
         </h2>
       </div>
-
-      <ul class="filters_menu">
-        <li class="active" data-filter="*">Todo</li>
-        <li data-filter=".burger">Hamburguesas</li>
-        <li data-filter=".pizza">Perros</li>
-        <li data-filter=".fries">Fries</li>
-      </ul>
 
       <div class="filters-content">
         <div class="row grid">
@@ -695,25 +687,6 @@
               <div class="col-12">
                 <textarea name="message_product" class="form-control mb-30" placeholder="Nombre del producto, cantidad y especificaciones"></textarea>
               </div>  
-              {% comment %} <div>
-                <select class="form-control nice-select wide">
-                  <option value="" disabled selected>
-                    How many persons?
-                  </option>
-                  <option value="">
-                    2
-                  </option>
-                  <option value="">
-                    3
-                  </option>
-                  <option value="">
-                    4
-                  </option>
-                  <option value="">
-                    5
-                  </option>
-                </select>
-              </div> {% endcomment %}
               <div>
                 <input type="date" class="form-control" name="message_date" placeholder="Fecha">
               </div>
@@ -725,9 +698,6 @@
             </form>
           </div>
         </div>
-        {% comment %} <div class="col-md-6">
-          <div class="map_container ">
-            <div id="googleMap"></div> {% endcomment %}
           </div>
         </div>
       </div>
@@ -776,21 +746,9 @@
               Vive una experiencia única
             </p>
             <div class="footer_social">
-              {% comment %} <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a> {% endcomment %}
               <a href="https://www.instagram.com/americangrill_co/">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
-              {% comment %} <a href="">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
-              </a> {% endcomment %}
             </div>
           </div>
         </div>
@@ -806,16 +764,6 @@
           </p>
         </div>
       </div>
-      {% comment %} <div class="footer-info">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br><br>
-          &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-        </p>
-      </div>
-    </div>
-  </footer> {% endcomment %}
   <!-- footer section -->
 
   <!-- jQery -->
@@ -834,6 +782,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
   <!-- custom js -->
   <script src="{% static 'pedidos/js/custom.js' %}"></script>
+  <script src="{% static 'pedidos/js/filter.js' %}"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>

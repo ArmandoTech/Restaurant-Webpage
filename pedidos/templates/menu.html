@@ -145,15 +145,15 @@
       </div>
 
       <ul class="filters_menu">
-        <li class="active" data-filter="*">Todo</li>
-        <li data-filter=".burger">Hamburguesas</li>
-        <li data-filter=".pizza">Perros</li>
-        <li data-filter=".fries">Fries</li>
+        <li class="all-list active" onclick="todos()">Todo</li>
+        <li class="burger-list" onclick="burger()">Hamburguesas</li>
+        <li class="perros-list" onclick="perro()">Perros</li>
+        <li class="fries-list" onclick="fries()">Fries</li>
       </ul>
 
       <div class="filters-content">
         <div class="row grid">
-          <div class="col-sm-6 col-lg-4 all pizza">
+          <div class="col-sm-6 col-lg-4 all perros">
             <div class="box">
               <div>
                 <div class="img-box">
@@ -305,7 +305,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4 all pizza">
+          <div class="col-sm-6 col-lg-4 all perros">
             <div class="box">
               <div>
                 <div class="img-box">
@@ -533,7 +533,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4 all pizza">
+          <div class="col-sm-6 col-lg-4 all perros">
             <div class="box">
               <div>
                 <div class="img-box">
@@ -761,7 +761,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4 all pizza">
+          <div class="col-sm-6 col-lg-4 all perros">
             <div class="box">
               <div>
                 <div class="img-box">
@@ -841,7 +841,7 @@
       </div>
       <div class="btn-box">
         <a href="book.html">
-          Hacer pedido
+          HACER PEDIDO
         </a>
       </div>
     </div>
@@ -889,21 +889,9 @@
               Vive una experiencia única
             </p>
             <div class="footer_social">
-              {% comment %} <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a> {% endcomment %} 
               <a href="https://www.instagram.com/americangrill_co/">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
-              {% comment %} <a href="">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
-              </a> {% endcomment %}
             </div>
           </div>
         </div>
@@ -919,17 +907,6 @@
           </p>
         </div>
       </div>
-      {% comment %} <div class="footer-info">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br><br>
-          &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-        </p>
-      </div>
-    </div>
-  </footer>
-  <!-- footer section --> {% endcomment %}
 
   <!-- jQery -->
   <script src="{% static 'pedidos/js/jquery-3.4.1.min.js' %}"></script>
@@ -947,6 +924,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
   <!-- custom js -->
   <script src="{% static 'pedidos/js/custom.js' %}"></script>
+  <script src="{% static 'pedidos/js/filter.js' %}"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
