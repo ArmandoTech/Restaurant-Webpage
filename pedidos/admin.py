@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Menu, MenuCategory, MenuItem
+from .models import Order
 
-admin.site.register(Menu)
+admin.site.register(Order)
 
 

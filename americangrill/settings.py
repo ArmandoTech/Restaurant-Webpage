@@ -1,4 +1,8 @@
-import os
+
+import django_heroku
+import dj_database_url
+from decouple import config
+
 
 from pathlib import Path
 import django
@@ -41,6 +45,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'americangrill.urls'
@@ -111,6 +116,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -127,3 +134,6 @@ EMAIL_HOST_USER= 'americangrillbga@gmail.com'
 EMAIL_HOST_PASSWORD= 'american1423' 
 EMAIL_USE_TLS= True
 #EMAIL_USE_SSL= False
+
+
+django_heroku.settings(locals())
