@@ -4,9 +4,6 @@ from django.core.mail import send_mail
 
 
 
-
-
-
 def index(request):
     if request.method=="POST":
         message_name= request.POST['message_name']
